@@ -1,0 +1,31 @@
+spring:
+    main:
+       banner-mode: log
+# spring.banner.location: C:/Users/C00311/FORCE/force-eai-master/banner.txt
+server:
+    port:
+        8063
+    servlet:
+      context-path:
+        /eai-force
+
+logging:
+    config:
+         logback-spring.xml
+
+cxf:
+  jaxrs:
+    component-scan: true
+    classes-scan-packages: org.apache.cxf.jaxrs.swagger
+
+modelEndpoints:
+  urlGetAreaList: http://10.44.11.76:8560/api/v2/force/core/area/list
+  urlCustomerInfo: http://10.44.11.76:8660/api/v2/force/od/customer/detail/list
+  urlUpdateCustomerInfo: http://10.44.11.76:8660/api/v2/force/customer/detail
+  urlGetLovList: http://10.44.11.76:8560/api/v2/force/core/common/lov/list
+  urlGetLovView: http://10.44.11.76:8560/api/v2/force/core/common/lov/detail
+  urlGetResources: http://10.44.11.76:8560/api/v2/force/core/resources/detail
+  urlGetTicketInfoByExtRefId: http://10.44.11.76:8660/api/v2/force/od/ticket/search/list
+  urlGetTicketInfoByTicketId: http://10.44.11.76:8660/api/v2/force/od/ticket/detail
+  urlCreateUpdateTicket: http://10.44.11.76:8660/api/v2/force/od/ticket/detail
+  urlInsertEaiLog: http://10.44.11.76:8560/api/v2/force/core/eailog/create
